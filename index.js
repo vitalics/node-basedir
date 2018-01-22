@@ -1,1 +1,1 @@
-require('node-basedir').register('examples');
+require('node-basedir').register('.');
