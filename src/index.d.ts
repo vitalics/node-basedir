@@ -1,0 +1,1 @@
+provider = (id: string) => any;

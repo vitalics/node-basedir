@@ -1,0 +1,17 @@
+{
+  "name": "node-basedir",
+  "version": "1.1.1",
+  "description": "",
+  "directories": {},
+  "private": false,
+
+  "baseDir": "./examples",
+
+  "main": "src/index.js",
+  "keywords": [],
+  "author": "Vitali_Haradkou",
+  "license": "ISC",
+  "dependencies": {
+    "node-basedir": "latest"
+  }
+}
