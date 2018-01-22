@@ -1,6 +1,6 @@
 {
   "name": "node-basedir",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "absolute path provider for require",
   "private": false,
   "baseDir": "./examples",

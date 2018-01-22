@@ -34,7 +34,9 @@ const SomeClass = require('./somefile'); // is equal for const SomeClass = provi
 module.exports = { SomeClass };
 
 // test.js
-const { provider } = require('node-basedir'); // optional
+require('node-basedir').register('examples'); // one time only
+const { provider } = require('node-basedir');
+
 const { SomeClass } = provider('some-path');
 
 let someClass = new SomeClass();
