@@ -1,6 +1,14 @@
 # node-basedir
 ### this package fix require path hell like this `../../../../etc`
-just write on `packaje.json` file "basedir":"./(rootName)"
+
+in your config write
+``` js
+require('node-basedir').register('<name of base directory>')
+```
+
+TODO: just write on `packaje.json` file `"basedir":"./(rootName)"`
+
+##
 
 ## usage 
 ```
