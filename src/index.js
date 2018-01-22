@@ -6,13 +6,22 @@ let ROOT_DIR = 'examples';
  * @param {string} id 
  * @returns any
  */
-global.provider = function provider(id) {
+global.provider = function(id) {
   let from_node_modules_path = removeNodeModulesPath();
   if (ROOT_DIR !== '') {
     return require(`${from_node_modules_path}/${id}`);
   }
   return require(`${from_node_modules_path}${id}`);
 };
+
+/**
+ * @description hack for experted member
+ * 
+ * @param {string} id
+ */
+function provider(id) {
+  return global.provider(id);
+}
 
 /**
  * 
@@ -28,7 +37,6 @@ function removeNodeModulesPath() {
   let replaced = removeNodeModulesPath.replace('node_modules/node-basedir/src', ROOT_DIR);
   return replaced;
 }
-
 /**
  * 
  * @param {string} path 
@@ -38,4 +46,4 @@ function normalizePath(path) {
   return path.replace(/\\/g, '/');
 }
 
-module.exports = { register };
+module.exports = { register, provider };
