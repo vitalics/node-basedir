@@ -1,34 +1,25 @@
 const NODE_MODULES_ROOT = __dirname;
-let ROOT_DIR = 'examples';
+let ROOT_DIR = '';
 
 /**
- * 
- * @param {string} id 
- * @returns any
- */
-global.provider = function(id) {
-  let from_node_modules_path = removeNodeModulesPath();
-  if (ROOT_DIR !== '') {
-    return require(`${from_node_modules_path}/${id}`);
-  }
-  return require(`${from_node_modules_path}${id}`);
-};
-
-/**
- * @description hack for experted member
- * 
  * @param {string} id
+ * 
+ * @returns Function
  */
+
 function provider(id) {
-  return global.provider(id);
+  let from_node_modules_path = removeNodeModulesPath();
+
+  let req = require(`${from_node_modules_path}/${id}`);
+  return req;
 }
 
 /**
  * 
- * @param {string} rootDir 
+ * @param {string} [rootDir] 
  */
 function register(rootDir) {
-  ROOT_DIR = rootDir;
+  rootDir ? (ROOT_DIR = rootDir) : (ROOT_DIR = '.');
 }
 
 function removeNodeModulesPath() {
