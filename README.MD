@@ -6,9 +6,15 @@ in your config write
 require('node-basedir').register('<name of base directory>')
 ```
 
-TODO: just write on `packaje.json` file `"basedir":"./(rootName)"`
+ or just write on `packaje.json` file
 
-##
+``` json
+{
+  ...
+  "baseDir": "examples",
+  ...
+}
+```
 
 ## usage 
 ```
@@ -34,7 +40,9 @@ const SomeClass = require('./somefile'); // is equal for const SomeClass = provi
 module.exports = { SomeClass };
 
 // test.js
-require('node-basedir').register('examples'); // one time only
+
+require('node-basedir').register('examples') // if in package json not set baseDir value
+
 const { provider } = require('node-basedir');
 
 const { SomeClass } = provider('some-path');
@@ -45,7 +53,7 @@ console.log(someClass.someMethod());
 ```
 ## run this example
 `node -r node-basedir examples/test.js`
-and must return result
+and return result is
 
 ``` cmd
 5

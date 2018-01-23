@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "node",
             "request": "launch",
@@ -8,7 +9,7 @@
             "runtimeArgs": [
                 "-r","node-basedir"
             ],
-            "program": "${workspaceFolder}/examples/test.js"
+            "program": "${workspaceFolder}/${relativeFile}"
         }
     ],
     "compounds": []
