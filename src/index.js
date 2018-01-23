@@ -1,13 +1,10 @@
 const fs = require('fs');
-const { NodeRequire } = require('n');
 
 const NODE_MODULES_ROOT = __dirname;
 let ROOT_DIR = '';
 let basedir = '';
 let packageJsonBaseDir = '';
-
-const packageJsonEvent = new EventEmitter();
-
+let isRegisteredBefore = false;
 /**
  * @param {string} id
  * 
@@ -15,6 +12,10 @@ const packageJsonEvent = new EventEmitter();
  */
 
 function provider(id) {
+  if (!isRegisteredBefore) {
+    register();
+  }
+  isRegisteredBefore = true;
   return require(`${basedir}/${id}`);
 }
 
@@ -29,6 +30,7 @@ function register(RootDir) {
   } else {
     basedir = setBaseDir();
   }
+  isRegisteredBefore = true;
 }
 
 function getRootDirectory() {
