@@ -1,10 +1,27 @@
 {
   "name": "node-basedir",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "absolute path provider for require",
   "private": false,
   "baseDir": "examples",
-  "keywords": [],
+  "keywords": [
+    "node",
+    "node-basedir",
+    "base dir",
+    "basedir",
+    "base directory",
+    "root",
+    "root directory",
+    "path provider",
+    "provider",
+    "directory provider",
+    "file provider",
+    "path",
+    "absolutely path provider",
+    "path resolver",
+    "require path hell",
+    "require"
+  ],
   "author": "Vitali_Haradkou",
   "license": "ISC",
   "directories": {
@@ -21,5 +38,8 @@
   },
   "repository": {
     "url": "https://github.com/vitalics/node-basedir.git"
+  },
+  "dependencies": {
+    "@types/node": "^9.3.0"
   }
 }
