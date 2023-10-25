@@ -40,6 +40,6 @@
     "url": "https://github.com/vitalics/node-basedir.git"
   },
   "dependencies": {
-    "@types/node": "^9.3.0"
+    "@types/node": "^20.0.0"
   }
 }
